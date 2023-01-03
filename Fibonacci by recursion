@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+
+public class Recursion {
+// Q-> Print fibonachi series till n th term by recursion
+	public static void fibonachi(int a,int b,int n) {
+		// a is 2nd last term and b is last term
+		if(n==0) { // Base case
+			return ;
+		}
+		int sum = a+b;
+		/* now we want 
+		 * a = b
+		 * b = sum 
+		 */
+		System.out.print(sum+" ");
+		fibonachi(b,sum,n-1);
+		
+	}
+     public static void main(String[]args) {
+    	  System.out.println("how many terms you want:");
+    	  Scanner sc =new Scanner(System.in);
+    	  int n = sc.nextInt();
+          int a =0 , b=1;
+    	  System.out.print(a+" ");
+    	  System.out.print(b+" ");
+    	  fibonachi(a,b,n-2); // n-2 is because we already printed the first two terms
+    	  
+      }
+}
